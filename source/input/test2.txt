@@ -1,0 +1,5 @@
+function circle particle radius {
+  range i 0 100 {
+    particle $(particle) ~?(sin($(i)) * $(radius)) ~ ~?(cos($(i)) * $(radius)) 0 0 0
+  }
+}
