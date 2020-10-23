@@ -1,0 +1,47 @@
+#!tick
+
+assign validPlayers @a[tag=harder, tag=!dead]
+
+as $(validPlayers)
+at @s {
+
+    assign test QWERTY
+
+    teleport ~ ~5 ~
+    setblock ~ ~-1 ~ stone
+
+    as @e[type = #mobs] {
+      say ~$(test)~$(test)
+      teleport ~ ~5 ~
+      setblock ~ ~-1 ~ stone
+    }
+        
+    range i 0 10 {
+      say $(i)
+      teleport ~ ~$(i) ~
+    }
+}
+
+function hello {
+    say ASDF!
+    say ASDF!
+    say ASDF!
+    say ASDF!
+}
+
+# testing a comment
+
+load data.csv {
+    file empower_$(mob_type) {
+        as @e[type=$(mob_type), limit=1] {
+            attribute set @s health ?(hearths * (1 + 1))
+            attribute set @s armor ?(armor * sin(pi/4))
+            hello
+        }
+        
+        say $(mob_type)
+    }
+}
+
+hello
+

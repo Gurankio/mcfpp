@@ -1,0 +1,11 @@
+include test2.txt
+
+as Gurankio
+at @s {
+  circle smoke 5
+  circle large_smoke 10
+}
+
+range i -1 2 100 {
+  say $(i)
+}
